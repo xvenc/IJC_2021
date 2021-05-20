@@ -51,7 +51,6 @@ struct ppm * ppm_read(const char * filename){
 
     }
     
-    //printf("%s %d %d %d",str,xsize,ysize,scale);
     struct ppm *p = malloc(sizeof(struct ppm)+(3*xsize*ysize));
     if (p == NULL) {
         warning_msg("Nepovedlo se mallocovat data pro strukturu: struct ppm\n");
@@ -76,25 +75,3 @@ struct ppm * ppm_read(const char * filename){
 void ppm_free(struct ppm *p){
     free(p);
 }
-/*
-int main(int argc, char **argv){
-    
-    if (argc < 2) {
-        fprintf(stderr,"ZADEJ SOUBOR\n");
-        return 1;
-    }
-    char *filename = argv[1];
-    struct ppm *pp = ppm_read(filename);
-    //128 64 32 16 8 4 2 0 1
-    //char rozsah je 0-7
-    char message = 0;
-
-    int index = 6;
-    message |= 1 << (index);
-    index = 0;
-    message |= 1 << (index);
-    printf("%c\n",message);
-    ppm_free(pp);
-    return 0;
-}
-*/

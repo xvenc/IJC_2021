@@ -27,8 +27,7 @@ int main(int argc, char **argv){
         error_exit("Chybny format\n");
     }
     
-    //128 64 32 16 8 4 2 1
-    //char rozsah je 0-7
+
     char letter = 0;
 
     char index = 0;
