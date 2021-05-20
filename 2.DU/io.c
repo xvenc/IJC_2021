@@ -41,18 +41,3 @@ int read_word(char *s, int max, FILE *f) {
     }
     return word_length;
 }
-/*
-int main(int argc, char **argv) {
-    FILE *f = fopen(argv[1],"r");
-    (void)argc;
-    char text[20];
-    int delka = 0;
-    while ((delka = read_word(text,20,f)) != EOF) {
-        printf("delka: %d slovo: ",delka);
-        printf("%s\n",text);    
-        memset(&text[0],'\0',20);
-    }       
-    fclose(f);
-    return 0;
-}
-*/

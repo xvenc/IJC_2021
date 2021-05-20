@@ -32,6 +32,7 @@ bool htab_erase(htab_t * t, htab_key_t key) {
             t->size--;
             return true;
         }
+        //go through the rest of the items
         while (item != NULL) {
             if (!strcmp(item->pair.key, key)) {
                 prev->next = item->next;

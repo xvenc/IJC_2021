@@ -47,6 +47,7 @@ void print_lines(char **lines, int n_lines, int file_lines){
 
 //read lines from stdin/file
 void read_lines(FILE *file, int n_lines){
+    //allocate space for n_lines 
     char **line = malloc(sizeof(char *) * n_lines);
     if (line == NULL) {
         fprintf(stderr,"ERROR: Couldnt alloc memory\n");
@@ -128,6 +129,7 @@ int main(int argc, char **argv){
     signed long number = 0;
     char *garbage = 0;
 
+    //argument parser max 4 arguments
     if (argc == 1) {
         
         read_from = stdin;

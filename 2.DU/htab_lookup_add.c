@@ -45,9 +45,7 @@ htab_pair_t * htab_lookup_add(htab_t * t, htab_key_t key) {
             free(item);
             return NULL;
         }
-        //copy key to the item
         strcpy((char *)item->pair.key, key);
-        //set the value to 0
         item->pair.value = 0;
         //set the next ptr to the rest of the linked list
         item->next = tmp;
@@ -71,12 +69,9 @@ htab_pair_t * htab_lookup_add(htab_t * t, htab_key_t key) {
             t->arr_items[index] = NULL;
             return NULL;
         }
-        //copy key and set its value to 1
         strcpy((char *)new_item->pair.key, key);
         new_item->next = NULL;
-        //set the value to 0
         new_item->pair.value = 0;
-        //increase the number of items
         t->size++;
         t->arr_items[index] = new_item;
         return &new_item->pair;
